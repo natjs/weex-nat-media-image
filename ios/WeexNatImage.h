@@ -1,5 +1,5 @@
 //
-//  NatWeexImage.h
+//  WeexNatImage.h
 //
 //  Created by huangyake on 17/1/7.
 //  Copyright © 2017 Nat. All rights reserved.
@@ -18,5 +18,5 @@
 
 @end
 
-@interface NatWeexImage : NSObject<NatImagePro>
+@interface WeexNatImage : NSObject<NatImagePro>
 @end

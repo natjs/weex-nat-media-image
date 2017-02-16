@@ -1,18 +1,18 @@
 //
-//  NatWeexImage.m
+//  WeexNatImage.m
 //
 //  Created by huangyake on 17/1/7.
 //  Copyright © 2017 Nat. All rights reserved.
 //
 
 
-#import "NatWeexImage.h"
+#import "WeexNatImage.h"
 #import "NatImage.h"
 
 #define _FOUR_CC(c1,c2,c3,c4) ((uint32_t)(((c4) << 24) | ((c3) << 16) | ((c2) << 8) | (c1)))
 #define _TWO_CC(c1,c2) ((uint16_t)(((c2) << 8) | (c1)))
 
-@implementation NatWeexImage
+@implementation WeexNatImage
 WX_EXPORT_METHOD(@selector(pick::))
 WX_EXPORT_METHOD(@selector(preview:::))
 WX_EXPORT_METHOD(@selector(info::))
