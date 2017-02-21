@@ -46,6 +46,7 @@
             target-dir="src/com/alibaba/weex/nat/MediaImageModule.java" />
 
         <framework src="com.nat:media-image:1.0.5" />
+        <framework src="com.nat:permission:1.0.1" />
      </platform>
 
 </plugin>
