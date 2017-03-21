@@ -1,12 +1,15 @@
 # nat-media-image
 
+- [Documentation](http://natjs.com/#/#image)
+- [Github](https://github.com/natjs/weex-nat-media-image)
+
 ## Installation
 ```
 weexpack plugin add nat-media-image
 ```
 
 ```
-npm install weex-nat --save
+npm install natjs --save
 ```
 
 ## Usage
@@ -15,7 +18,7 @@ Use in weex file (.we)
 
 ```html
 <script>
-import 'Nat' from 'weex-nat'
+import 'Nat' from 'natjs'
 
 // preview
 Nat.image.preview([

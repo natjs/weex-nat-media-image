@@ -2,13 +2,13 @@
 
 <plugin xmlns="http://www.w3.org/ns/widgets"
     id="nat-media-image"
-    version="0.1.0">
+    version="0.1.2">
     <name>nat-media-image</name>
-    <description></description>
+    <description>Nat.js module: Image (pick Images from gallery, preview image list, get info or exif info from image)</description>
     <license>MIT</license>
     <keywords>weex,plugin,nat,natjs,image</keywords>
-    <repo>https://github.com/Natjs/weex-nat-media-image.git</repo>
-    <issue>https://github.com/Natjs/weex-nat-media-image/issues</issue>
+    <repo>https://github.com/natjs/weex-nat-media-image.git</repo>
+    <issue>https://github.com/natjs/weex-nat-media-image/issues</issue>
     
      <!-- ios -->
      <platform name="ios">
