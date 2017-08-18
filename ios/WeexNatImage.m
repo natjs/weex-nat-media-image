@@ -2,7 +2,7 @@
 //  WeexNatImage.m
 //
 //  Created by huangyake on 17/1/7.
-//  Copyright © 2017 Nat. All rights reserved.
+//  Copyright © 2017 Instapp. All rights reserved.
 //
 
 
@@ -13,6 +13,7 @@
 #define _TWO_CC(c1,c2) ((uint16_t)(((c2) << 8) | (c1)))
 
 @implementation WeexNatImage
+@synthesize weexInstance;
 WX_EXPORT_METHOD(@selector(pick::))
 WX_EXPORT_METHOD(@selector(preview:::))
 WX_EXPORT_METHOD(@selector(info::))
