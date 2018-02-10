@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://www.w3.org/ns/widgets"
     id="nat-media-image"
-    version="0.2.1">
+    version="0.2.3">
     <name>nat-media-image</name>
     <description>Nat.js module: Image (pick Images from gallery, preview image list, get info or exif info from image)</description>
     <license>MIT</license>
@@ -47,7 +47,7 @@
 
         <source-file src="android/Image.java" target-dir="src/com/instapp/nat/media/image" />
 
-        <framework src="com.nat:media-image:1.1.1" />
+        <framework src="com.nat:media-image:1.1.3" />
         <framework src="com.nat:permission:1.0.2" />
      </platform>
 
