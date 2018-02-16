@@ -22,7 +22,7 @@ WX_EXPORT_METHOD(@selector(info::))
 WX_EXPORT_METHOD(@selector(exif::))
 
 - (void)pick:(NSDictionary *)params :(WXModuleCallback)callback{
-    [[NatMediaImage singletonManger] pick:params :^(id error,id result) {
+    [[NatImage singletonManger] pick:params :^(id error,id result) {
         if (callback) {
             if (error) {
                 callback(error);
@@ -34,7 +34,7 @@ WX_EXPORT_METHOD(@selector(exif::))
 }
 
 - (void)preview:(NSArray *)files :(NSDictionary *)params :(WXModuleCallback)callback{
-    [[NatMediaImage singletonManger] preview:files :params :^(id error,id result) {
+    [[NatImage singletonManger] preview:files :params :^(id error,id result) {
         if (callback) {
             if (error) {
                 callback(error);
@@ -46,7 +46,7 @@ WX_EXPORT_METHOD(@selector(exif::))
 }
 
 - (void)info:(NSString *)path :(WXModuleCallback)callback{
-    [[NatMediaImage singletonManger] info:path :^(id error,id result) {
+    [[NatImage singletonManger] info:path :^(id error,id result) {
         if (callback) {
             if (error) {
                 callback(error);
@@ -58,7 +58,7 @@ WX_EXPORT_METHOD(@selector(exif::))
 }
 
 - (void)exif:(NSString *)path :(WXModuleCallback)callback{
-    [[NatMediaImage singletonManger] exif:path :^(id error,id result) {
+    [[NatImage singletonManger] exif:path :^(id error,id result) {
         if (callback) {
             if (error) {
                 callback(error);
