@@ -1,6 +1,6 @@
 {
   "name": "nat-media-image",
-  "version": "1.0.0-alpha",
+  "version": "1.0.2",
   "main": "./js/build/main.js",
   "description": "Nat.js module for weex: Image",
   "license": "MIT",
@@ -8,13 +8,13 @@
   "ios": {
     "type": "pod",
     "name": "WeexNatMediaImage",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "android": {
     "type": "maven",
     "groupId": "com.instapp.nat",
     "name": "weex-plugin-media-image",
-    "version": "1.0.0-alpha"
+    "version": "1.0.1"
   },
   "keywords": [
     "nat",

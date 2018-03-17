@@ -1,23 +1,29 @@
-package com.nat.weex;
+package com.instapp.nat.weex.plugin.media.Image;
 
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import com.nat.media_image.Constant;
-import com.nat.media_image.ImageModule;
-import com.nat.media_image.ModuleResultListener;
-import com.nat.media_image.Util;
-import com.nat.permission.PermissionChecker;
+
+import com.alibaba.weex.plugin.annotation.WeexModule;
+import com.instapp.nat.media.image.Constant;
+import com.instapp.nat.media.image.ImageModule;
+import com.instapp.nat.media.image.ModuleResultListener;
+import com.instapp.nat.media.image.Util;
+import com.instapp.nat.permission.PermissionChecker;
+
 import com.taobao.weex.annotation.JSMethod;
 import com.taobao.weex.bridge.JSCallback;
 import com.taobao.weex.common.WXModule;
+
 import java.util.HashMap;
+import java.util.Locale;
 
 /**
  * Created by Acathur on 17/2/17.
  * Copyright (c) 2017 Instapp. All rights reserved.
  */
 
+@WeexModule(name = "nat/media/image")
 public class Image extends WXModule {
 
     JSCallback mPickCallback;
@@ -30,6 +36,9 @@ public class Image extends WXModule {
     public static final int PICK_REQUEST_CODE = 101;
     public static final int PREVIEW_REQUEST_CODE = 102;
 
+    String lang = Locale.getDefault().getLanguage();
+    Boolean isChinese = lang.startsWith("zh");
+
     @JSMethod
     public void pick(HashMap<String, Object> param, final JSCallback jsCallback){
         mPickCallback = jsCallback;
@@ -38,9 +47,15 @@ public class Image extends WXModule {
         boolean b = PermissionChecker.lacksPermissions(mWXSDKInstance.getContext(), Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (b) {
             HashMap<String, String> dialog = new HashMap<>();
-            dialog.put("title", "权限申请");
-            dialog.put("message", "请允许打开相机，相册");
-            PermissionChecker.requestPermissions((Activity) mWXSDKInstance.getContext(), dialog, new com.nat.permission.ModuleResultListener() {
+            if (isChinese) {
+                dialog.put("title", "权限申请");
+                dialog.put("message", "请允许应用访问相册");
+            } else {
+                dialog.put("title", "Permission Request");
+                dialog.put("message", "Please allow the app to access photos");
+            }
+
+            PermissionChecker.requestPermissions((Activity) mWXSDKInstance.getContext(), dialog, new com.instapp.nat.permission.ModuleResultListener() {
                 @Override
                 public void onResult(Object o) {
                     if (o != null && o.toString().equals("true")) {
@@ -62,9 +77,15 @@ public class Image extends WXModule {
         boolean b = PermissionChecker.lacksPermissions(mWXSDKInstance.getContext(),Manifest.permission.READ_EXTERNAL_STORAGE);
         if (b) {
             HashMap<String, String> dialog = new HashMap<>();
-            dialog.put("title", "权限申请");
-            dialog.put("message", "请允许打开sdCard");
-            PermissionChecker.requestPermissions((Activity) mWXSDKInstance.getContext(), dialog, new com.nat.permission.ModuleResultListener() {
+            if (isChinese) {
+                dialog.put("title", "权限申请");
+                dialog.put("message", "请允许应用访问相册及文件");
+            } else {
+                dialog.put("title", "Permission Request");
+                dialog.put("message", "Please allow the app to access photos and files on your device");
+            }
+
+            PermissionChecker.requestPermissions((Activity) mWXSDKInstance.getContext(), dialog, new com.instapp.nat.permission.ModuleResultListener() {
                 @Override
                 public void onResult(Object o) {
                     if (o != null && o.toString().equals("true")) {
